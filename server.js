@@ -18,7 +18,8 @@ const app = express()
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    rootValue
+    rootValue,
+    graphiql: true
 }))
 
 app.listen(3000, ()=> [ console.log('Running GraphQL server, PORT 3000') ])
