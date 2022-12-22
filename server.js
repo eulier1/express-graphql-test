@@ -4,8 +4,8 @@ const { graphqlHTTP } = require('express-graphql')
 
 const schema = buildSchema(`
   type Query {
-    product: [Product]
-    order: [Order]
+    products: [Product]
+    orders: [Order]
   }
 
   type Product {
