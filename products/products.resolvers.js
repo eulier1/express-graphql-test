@@ -7,5 +7,13 @@ module.exports = {
             const products = await Promise.resolve(productModel.getAllProducts())
             return products
           },
+        productsByPrice: (_, arg) => {
+            const productsByPrice = productModel.getProductsByPrice(arg.min, arg.max)
+            return productsByPrice
+        },
+        product: (_, arg) => {
+            const product = productModel.getProductById(arg.id)
+            return product
+        }
     }
 }
