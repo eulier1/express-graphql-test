@@ -15,5 +15,10 @@ module.exports = {
             const product = productModel.getProductById(arg.id)
             return product
         }
+    },
+    Mutation: {
+        addNewProduct: (_, arg) => {
+            return productModel.addNewProduct(arg.id, arg.description, arg.price)
+        }
     }
 }

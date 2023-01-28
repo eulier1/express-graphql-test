@@ -2,12 +2,14 @@ const products = [
     {
         id: 'redshoe',
         description: 'Red Shoe',
-        price: 42.42
+        price: 42.42,
+        reviews: []
       },
       {
         id: 'bluejeans',
         description: 'blue jeans',
-        price: 55.55
+        price: 55.55,
+        reviews: []
       }
 ]
 
@@ -25,8 +27,21 @@ function getProductById(id) {
   return products.find( (product) => product.id === id )
 }
 
+function addNewProduct(id, description, price) {
+  const newProduct = {
+    id,
+    description,
+    price,
+    reviews: []
+  }
+
+  products.push(newProduct)
+  return newProduct
+}
+
 module.exports = {
   getAllProducts,
   getProductsByPrice,
-  getProductById
+  getProductById,
+  addNewProduct
 }
